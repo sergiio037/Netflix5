@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Netflix</string>
+    <string name="Iniciar_sesion">Iniciar Sesión</string>
+    <string name="email_numero">Email o número de teléfono</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="recuperar_pass">Recuperar Contraseña</string>
+    <string name="registrate">Registrate</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="o">o</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="m_s">Más</string>
+    <string name="inicio">Inicio</string>
+    <string name="b_squeda">Búsqueda</string>
+    <string name="descargas">Descargas</string>
+    <string name="reproducir">Reproducir</string>
+
+    <string name="description_logo">Logo</string>
+    <string name="button_list">Mi lista</string>
+    <string name="button_info">Información</string>
+    <string name="button_play">Reproducir</string>
+    <string name="categoria1">Ficcion</string>
+    <string name="categoria2">\u2022 Suspenso</string>
+    <string name="categoria3">\u2022 Misterio</string>
+    <string name="categoria4">\u2022 Acción</string>
+    <string name="title1">Series</string>
+    <string name="title2">Películas</string>
+    <string name="title3">Categorías</string>
+    <string name="categorie1">De Misterio</string>
+    <string name="title_rv_premiere">Estrenos 2022</string>
+    <string name="title_rv_horror">Terror y misterio</string>
+</resources>
