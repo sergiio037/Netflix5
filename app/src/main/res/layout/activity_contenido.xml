@@ -229,10 +229,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_margin="5sp"
-                        android:background="transaparent"
+                        android:background="@null"
                         android:orientation="horizontal"
-
-
                         android:padding="2dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
@@ -272,7 +270,7 @@
                         android:orientation="horizontal"
                         android:padding="2dp">
                         <ImageView
-                            android:id="@+id/imagenTheCrown"
+                            android:id="@+id/imagenTheCrown2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
