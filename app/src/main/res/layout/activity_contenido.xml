@@ -204,18 +204,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
 
-                android:layout_weight="1"
                 android:layout_marginTop="15dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Preview"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:layout_marginHorizontal="20dp"
-                    android:textSize="@dimen/size_categorie"
+                    android:text="Preview"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_title"
+                    android:textStyle="bold"
                     tools:ignore="SpUsage" />
+
                 <LinearLayout
                     android:id="@+id/linearLayoutPreviewCard"
                     android:layout_width="match_parent"
@@ -223,12 +225,13 @@
 
                     android:orientation="horizontal"
                     android:padding="2dp">
+
                     <LinearLayout
                         android:id="@+id/linearLayoutPreviewCardElement1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:layout_margin="5sp"
+                        android:layout_weight="1"
                         android:background="@null"
                         android:orientation="horizontal"
                         android:padding="2dp">
@@ -237,11 +240,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:scaleType="fitXY"
-                            app:srcCompat="@drawable/the_crown"
-                            app:shapeAppearanceOverlay="@style/imagenCircular"/>
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/the_crown" />
 
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/linearLayoutPreviewCardElement2"
                         android:layout_width="0dp"
@@ -250,18 +254,15 @@
 
                         android:orientation="horizontal"
                         android:padding="2dp">
-                        <ImageView
-                            android:id="@+id/imagenTheCrown"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/element_preview"
-                            android:elevation="10dp"
-                            android:src="@drawable/effect_image"
 
-                            tools:visibility="visible"/>
-
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/picky_blinder_png" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/linearLayoutPreviewCardElement3"
                         android:layout_width="0dp"
@@ -269,15 +270,80 @@
                         android:layout_weight="1"
                         android:orientation="horizontal"
                         android:padding="2dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/the_walking_dead" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Popular en Netflix"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_title"
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
+                <LinearLayout
+                    android:id="@+id/linearLayoutPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPopularNarcos"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
                         <ImageView
-                            android:id="@+id/imagenTheCrown2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/element_preview"
-                            android:elevation="10dp"
-                            android:src="@drawable/effect_image"
-                            tools:visibility="visible"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/narcos" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPopularCasaDePapel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/la_casa_de_papel" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPopularEntrevias"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            app:shapeAppearanceOverlay="@style/imagenCircular"
+                            app:srcCompat="@drawable/entrevias" />
 
                     </LinearLayout>
 

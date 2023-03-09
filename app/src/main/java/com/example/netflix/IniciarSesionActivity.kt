@@ -4,6 +4,8 @@ package com.example.netflix
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -62,10 +64,10 @@ class IniciarSesionActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables")
     fun comprobar(){
         if(binding.editTextTextInicioSesion.length()>3 && binding.editTextpass.length()>3) {
-            binding.IniciarSesion.background = getDrawable(R.drawable.boton)
+            binding.IniciarSesion.backgroundTintList= ColorStateList.valueOf(Color.rgb(229,9,20))
             binding.IniciarSesion.isEnabled=true
         } else{
-            binding.IniciarSesion.background = getDrawable(R.drawable.boton_desactivado)
+            binding.IniciarSesion.backgroundTintList= ColorStateList.valueOf(Color.rgb(20,20,20))
             binding.IniciarSesion.isEnabled=false
         }
 

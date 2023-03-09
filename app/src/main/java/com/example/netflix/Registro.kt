@@ -2,18 +2,19 @@ package com.example.netflix
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.netflix.databinding.ActivityRegistroBinding
 
 class Registro : AppCompatActivity() {
     val user = User(this)
     lateinit var binding: ActivityRegistroBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,19 +74,19 @@ class Registro : AppCompatActivity() {
         if (binding.editTextpass.text.toString().equals(binding.editTextRepitPass.text.toString()) && binding.editTextRepitPass.text.toString().isNotEmpty()){
             binding.editTextpass.background=getDrawable(R.drawable.logeo)
             binding.editTextRepitPass.background=getDrawable(R.drawable.logeo)
-            binding.registrarse.background=getDrawable(R.drawable.boton)
+            binding.registrarse.backgroundTintList= ColorStateList.valueOf(Color.rgb(229,9,20))
             binding.registrarse.isEnabled=true
             return true
         }else if(binding.editTextRepitPass.text.toString().isEmpty()){
             binding.editTextpass.background=getDrawable(R.drawable.logeo)
             binding.editTextRepitPass.background=getDrawable(R.drawable.logeo)
-            binding.registrarse.background=getDrawable(R.drawable.boton_desactivado)
+            binding.registrarse.backgroundTintList= ColorStateList.valueOf(Color.rgb(20,20,20))
             binding.registrarse.isEnabled=false
             return false
         }else{
             binding.editTextpass.background=getDrawable(R.drawable.pass_fail)
             binding.editTextRepitPass.background=getDrawable(R.drawable.pass_fail)
-            binding.registrarse.background=getDrawable(R.drawable.boton_desactivado)
+            binding.registrarse.backgroundTintList= ColorStateList.valueOf(Color.rgb(20,20,20))
             binding.registrarse.isEnabled=false
             return false
         }

@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Netflix"
         tools:targetApi="31">
         <activity
+            android:name=".Reproducir"
+            android:exported="false" />
+        <activity
             android:name=".Contenido"
             android:exported="false" />
         <activity
