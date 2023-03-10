@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -27,6 +28,10 @@ class IniciarSesionActivity : AppCompatActivity() {
         }
         binding.registrarse.setOnClickListener {
             this.navigateTo(Registro::class.java)
+        }
+        binding.textAyuda.setOnClickListener(){
+            var _uri = Uri.parse("https://help.netflix.com/es-es")
+            startActivity(Intent(Intent.ACTION_VIEW,_uri))
         }
 
         binding.IniciarSesion.setOnClickListener {

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,10 +18,14 @@ class Registro : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.textAyuda.setOnClickListener(){
+            var _uri = Uri.parse("https://help.netflix.com/es-es")
+            startActivity(Intent(Intent.ACTION_VIEW,_uri))
+        }
         binding.editTextTextGmailNumero.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -90,6 +95,7 @@ class Registro : AppCompatActivity() {
             binding.registrarse.isEnabled=false
             return false
         }
+
 
     }
 

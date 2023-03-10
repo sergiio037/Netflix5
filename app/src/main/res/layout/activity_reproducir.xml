@@ -25,26 +25,28 @@
     <LinearLayout
         android:id="@+id/LinearLayoutContenido"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:background="#141414"
         android:orientation="vertical"
         >
         <RelativeLayout
-            android:id="@+id/LinearLayoutPlay"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#141414"
             android:orientation="vertical"
             >
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_gravity="top"
-            android:scaleType="fitXY"
-            android:elevation="10sp"
-            app:srcCompat="@drawable/stranger_things_play"
-            tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageViewPresentacion"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_gravity="top"
+                android:elevation="10sp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/stranger_things_play"
+                tools:visibility="visible" />
 
 
             <ImageButton
@@ -59,6 +61,7 @@
 
         </RelativeLayout>
         <TextView
+            android:id="@+id/sp_nombre"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
@@ -109,6 +112,7 @@
                 tools:ignore="SpUsage" />
         </LinearLayout>
         <TextView
+            android:id="@+id/sp_descripcion"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
@@ -168,7 +172,7 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_list"
+                android:text="Valorar"
                 android:layout_marginLeft="10dp"
                 android:textAllCaps="false"
                 android:textColor="#B3B3B3"
@@ -184,7 +188,7 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_list"
+                android:text="Compartir"
                 android:layout_marginLeft="10dp"
                 android:textAllCaps="false"
                 android:textColor="#B3B3B3"
@@ -205,22 +209,452 @@
             android:layout_weight="1"
             android:layout_marginTop="10sp"
             />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/Episodios"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_list"
-            android:layout_marginLeft="10dp"
-            android:textAllCaps="false"
-            android:textColor="#B3B3B3"
-            android:textSize="@dimen/size_categorie"
-            app:icon="@drawable/ic_linea_roja"
-            app:iconGravity="top"
-            app:iconTint="#E50914"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpUsage" />
+            android:orientation="vertical"
+            android:layout_marginLeft="10sp"
+            >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#E50914"
+            android:layout_marginTop="1sp"
+            />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Episodios"
+                android:textSize="@dimen/size_title"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="10sp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/LinearLayoutPlay"
+                    android:layout_width="150dp"
+                    android:layout_height="90dp"
+                    android:background="#141414"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageViewCap1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:elevation="10sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stranger_things_cap_1"
+                        tools:visibility="visible" />
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:elevation="10dp"
+                        android:padding="12sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/boton_play" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/cap1_nom"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="1. La desaparición de Will Byers"
+                        android:textSize="@dimen/size_title"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="05dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3B3B3"
+
+                        android:text="59min"
+                        android:textSize="13dp"
+
+                        tools:ignore="SpUsage" />
+            </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/cap1_desc"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_height="wrap_content"
+                android:textColor="#B3B3B3"
+
+                android:layout_marginRight="50dp"
+                android:textSize="13dp"
+
+                tools:ignore="SpUsage"
+                    android:text="Cuando vuelve en bici a su casa, Will ve algo horroroso. Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal."
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="10sp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+
+                    android:layout_width="150dp"
+                    android:layout_height="90dp"
+                    android:background="#141414"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageViewCap2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:elevation="10sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stranger_things_cap_2"
+                        tools:visibility="visible" />
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:elevation="10dp"
+                        android:padding="12sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/boton_play" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/cap2_nom"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="3. Luces navideñas"
+                        android:textSize="@dimen/size_title"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="05dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3B3B3"
+
+                        android:text="45min"
+                        android:textSize="13dp"
+
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/cap2_desc"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_height="wrap_content"
+                android:textColor="#B3B3B3"
+
+                android:layout_marginRight="50dp"
+                android:textSize="13dp"
+
+                tools:ignore="SpUsage"
+                android:text="Lucas, Mike y Dustin intentan hablar con la niña que encontraron en el bosque. Hopper interroga a Joyce, que se ha puesto muy nerviosa por una llamada telefónica."
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="10sp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+
+                    android:layout_width="150dp"
+                    android:layout_height="90dp"
+                    android:background="#141414"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageViewCap3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:elevation="10sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stranger_things_cap_3"
+                        tools:visibility="visible" />
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:elevation="10dp"
+                        android:padding="12sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/boton_play" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/cap3_nom"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="4. El cadáver"
+                        android:textSize="@dimen/size_title"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="05dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3B3B3"
+
+                        android:text="45min"
+                        android:textSize="13dp"
+
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_height="wrap_content"
+                android:textColor="#B3B3B3"
+                android:id="@+id/cap3_desc"
+                android:layout_marginRight="50dp"
+                android:textSize="13dp"
+
+                tools:ignore="SpUsage"
+                android:text="Cada vez más preocupada, Nancy sigue buscando a Barb y descubre lo que tenía Jonathan entre manos. Joyce está segura de que Will intenta comunicarse con ella."
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="10sp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+
+                    android:layout_width="150dp"
+                    android:layout_height="90dp"
+                    android:background="#141414"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageViewCap4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:elevation="10sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stranger_things_cap_4"
+                        tools:visibility="visible" />
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:elevation="10dp"
+                        android:padding="12sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/boton_play" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/cap4_nom"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="La pulga y el acóbata"
+                        android:textSize="@dimen/size_title"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="05dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3B3B3"
+
+                        android:text="45min"
+                        android:textSize="13dp"
+
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_height="wrap_content"
+                android:textColor="#B3B3B3"
+                android:id="@+id/cap4_desc"
+                android:layout_marginRight="50dp"
+                android:textSize="13dp"
+
+                tools:ignore="SpUsage"
+                android:text="Joyce se niega a aceptar que su hijo Will esté muerto e intenta contactar con él. Once cambia de imagen. Nancy y Jonathan forman una alianza imprevisible."
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="10sp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+
+                    android:layout_width="150dp"
+                    android:layout_height="90dp"
+                    android:background="#141414"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageViewCap5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:elevation="10sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stranger_things_cap_5"
+                        tools:visibility="visible" />
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:elevation="10dp"
+                        android:padding="12sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/boton_play" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/cap5_nom"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="2. La chica rara de la calle Maple"
+                        android:textSize="@dimen/size_title"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="05dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3B3B3"
+                        android:id="@+id/cap5_desc"
+                        android:text="45min"
+                        android:textSize="13dp"
+
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_height="wrap_content"
+                android:textColor="#B3B3B3"
+
+                android:layout_marginRight="50dp"
+                android:textSize="13dp"
+
+                tools:ignore="SpUsage"
+                android:text="Hopper entra en el laboratorio. Nancy y Jonathan se enfrentan a la fuerza que secuestró a Will. Los niños le preguntan al Sr. Clarke cómo se viaja a otra dimensión."
+                />
+        </LinearLayout>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>
