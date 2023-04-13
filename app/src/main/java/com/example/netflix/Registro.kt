@@ -11,17 +11,24 @@ import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.netflix.databinding.ActivityRegistroBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 class Registro : AppCompatActivity() {
     val user = User(this)
     lateinit var binding: ActivityRegistroBinding
-
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth = Firebase.auth
+
         binding.textAyuda.setOnClickListener(){
             var _uri = Uri.parse("https://help.netflix.com/es-es")
             startActivity(Intent(Intent.ACTION_VIEW,_uri))
@@ -69,9 +76,31 @@ class Registro : AppCompatActivity() {
             }
 
             user.save()
-            startActivity(iniciar_intent)
-
+            signup(binding.editTextTextGmailNumero.text.toString(),binding.editTextpass.text.toString())
         }
+    }
+    fun signup(email:String,password:String){
+    auth.createUserWithEmailAndPassword(email, password)
+    .addOnCompleteListener(this) { task ->
+        if (task.isSuccessful) {
+            // Sign in success, update UI with the signed-in user's information
+            Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show()
+            val user = auth.currentUser
+            updateUI(user)
+        } else {
+            // If sign in fails, display a message to the user.
+            Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "Authentication failed.",
+                Toast.LENGTH_SHORT).show()
+            updateUI(null)
+        }
+    }}
+    private fun updateUI(user: FirebaseUser?) {
+
+    }
+
+    private fun reload() {
+
     }
     @SuppressLint("UseCompatLoadingForDrawables")
     fun repetirPass(): Boolean{

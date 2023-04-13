@@ -13,15 +13,20 @@ import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.netflix.databinding.ActivityIniciarSesionBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class IniciarSesionActivity : AppCompatActivity() {
     lateinit var binding: ActivityIniciarSesionBinding
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        auth= Firebase.auth
 
         binding.imageBack.setOnClickListener(){
             this.navigateTo(MainActivity::class.java)
@@ -35,24 +40,8 @@ class IniciarSesionActivity : AppCompatActivity() {
         }
 
         binding.IniciarSesion.setOnClickListener {
-
-            if (User.canLogin(
-                    this,
-                    binding.editTextTextInicioSesion.text.toString(),
-                    binding.editTextpass.text.toString()
-                )
-            ) {
-                val user = User.load(this, binding.editTextTextInicioSesion.text.toString())
-                if (user == null) {
-                    Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
-                }
-
-                user.login()
-                this.navigateTo(Pantalla_carga::class.java, true)
-            } else
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
-        }
+                iniciarSesion(binding.editTextTextInicioSesion.text.toString(),binding.editTextpass.text.toString())
+             }
 
         val listener = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
@@ -75,6 +64,29 @@ class IniciarSesionActivity : AppCompatActivity() {
             binding.IniciarSesion.backgroundTintList= ColorStateList.valueOf(Color.rgb(20,20,20))
             binding.IniciarSesion.isEnabled=false
         }
+
+    }
+    fun iniciarSesion(email:String,password:String){
+    auth.signInWithEmailAndPassword(email, password)
+    .addOnCompleteListener(this) { task ->
+        if (task.isSuccessful) {
+            // Sign in success, update UI with the signed-in user's information
+            Toast.makeText(baseContext, "Correct",
+                Toast.LENGTH_SHORT).show()
+            val user = auth.currentUser
+            updateUI(user)
+        } else {
+            // If sign in fails, display a message to the user.
+            Toast.makeText(baseContext, "Authentication failed.",
+                Toast.LENGTH_SHORT).show()
+            updateUI(null)
+        }
+    }}
+    private fun updateUI(user: FirebaseUser?) {
+
+    }
+
+    private fun reload() {
 
     }
     }
