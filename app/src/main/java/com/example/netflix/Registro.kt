@@ -28,11 +28,12 @@ class Registro : AppCompatActivity() {
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-
+        binding.registrarse.isEnabled=false
         binding.textAyuda.setOnClickListener(){
             var _uri = Uri.parse("https://help.netflix.com/es-es")
             startActivity(Intent(Intent.ACTION_VIEW,_uri))
         }
+
         binding.editTextTextGmailNumero.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -62,6 +63,9 @@ class Registro : AppCompatActivity() {
         val iniciar_intent = Intent(this,IniciarSesionActivity::class.java)
         binding.IniciarSesion.setOnClickListener(){
                 startActivity(iniciar_intent)
+        }
+        binding.imageBack.setOnClickListener(){
+            startActivity(iniciar_intent)
         }
 
 

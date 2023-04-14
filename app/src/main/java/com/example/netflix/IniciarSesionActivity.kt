@@ -26,6 +26,7 @@ class IniciarSesionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.IniciarSesion.isEnabled=false
         auth= Firebase.auth
 
         binding.imageBack.setOnClickListener(){
@@ -71,15 +72,16 @@ class IniciarSesionActivity : AppCompatActivity() {
     .addOnCompleteListener(this) { task ->
         if (task.isSuccessful) {
             // Sign in success, update UI with the signed-in user's information
-            Toast.makeText(baseContext, "Correct",
-                Toast.LENGTH_SHORT).show()
+
             val user = auth.currentUser
             updateUI(user)
+            startActivity(Intent(this,Pantalla_carga::class.java))
         } else {
             // If sign in fails, display a message to the user.
             Toast.makeText(baseContext, "Authentication failed.",
                 Toast.LENGTH_SHORT).show()
             updateUI(null)
+
         }
     }}
     private fun updateUI(user: FirebaseUser?) {
