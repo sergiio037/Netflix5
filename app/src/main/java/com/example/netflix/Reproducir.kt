@@ -1,6 +1,6 @@
 package com.example.netflix
-import android.R
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.netflix.databinding.ActivityReproducirBinding
@@ -8,6 +8,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 
 
@@ -23,6 +25,12 @@ class Reproducir : AppCompatActivity() {
         var sp_r= intent.getStringExtra("sp")
         val docRef=db.collection("Series").document("NgFzA7tWFXYZnrRLzgoS")
         val youTubePlayerView: YouTubePlayerView = binding.youtubePlayerView
+        val options: IFramePlayerOptions = IFramePlayerOptions.Builder()
+            .controls(0)
+            .build()
+
+
+
 
 
         docRef.get().addOnSuccessListener { document ->
@@ -34,12 +42,15 @@ class Reproducir : AppCompatActivity() {
 
                         if (serienom.equals(sp_r)){
                             binding.spNombre.setText(serienom)
-                            youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+                            val playerListener=object : AbstractYouTubePlayerListener() {
                                 override fun onReady(youTubePlayer: YouTubePlayer) {
                                     // loading the selected video into the YouTube Player
                                     youTubePlayer.loadVideo(videoid.get(serienom).toString(), 0.toFloat())
+
                                 }
-                            })
+                            }
+                            youTubePlayerView.enableAutomaticInitialization=false
+                            youTubePlayerView.initialize(playerListener,options)
                             serie.nombre=serienom
                             serie.descripcion=((series.get(serienom) as Map <*,*>).get("descripción").toString())
                             binding.spDescripcion.setText(serie.descripcion)
