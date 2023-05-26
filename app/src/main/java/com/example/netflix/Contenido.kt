@@ -15,9 +15,7 @@ class Contenido : AppCompatActivity() {
 
         setContentView(binding.root)
         var reproducir =Intent(this,Reproducir::class.java)
-        binding.btnPlayMovie.setOnClickListener(){
-            startActivity(reproducir)
-        }
+
         binding.linearLayoutPopularNarcos.setOnClickListener(){
             reproducir.putExtra("sp","Narcos")
             startActivity(reproducir)
@@ -28,6 +26,10 @@ class Contenido : AppCompatActivity() {
         }
         binding.linearLayoutPopularEntrevias.setOnClickListener(){
             reproducir.putExtra("sp","Entrevias")
+            startActivity(reproducir)
+        }
+        binding.btnPlayMovieStrangerThings.setOnClickListener(){
+            reproducir.putExtra("sp","Stranger Things")
             startActivity(reproducir)
         }
         binding.textAyuda.setOnClickListener(){

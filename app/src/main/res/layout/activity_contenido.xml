@@ -165,7 +165,7 @@
                         tools:ignore="SpUsage" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_play_movie"
+                        android:id="@+id/btn_play_movie_Stranger_Things"
                         style="@style/Widget.MaterialComponents.Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
